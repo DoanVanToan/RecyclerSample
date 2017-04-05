@@ -1,4 +1,4 @@
-package com.framgia.toandoan;
+package com.framgia.toandoan.screen.option;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.framgia.toandoan.R;
+import com.framgia.toandoan.data.option.model.OptionItem;
 import com.framgia.toandoan.databinding.ItemOptionBinding;
 
 import java.util.ArrayList;
@@ -70,9 +72,9 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.ViewHolder
     }
 
     public void onDeleteOptionClick(int position) {
-        if (position == getItemCount() && getItemCount() == 1) return;
+        if (position == 0 && getItemCount() == 1) return;
         mOptions.remove(position);
-        notifyItemRemoved(position);
+        notifyDataSetChanged();
     }
 
     public void onAddNewOption(int position) {

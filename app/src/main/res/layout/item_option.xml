@@ -7,11 +7,11 @@
 
         <variable
             name="option"
-            type="com.framgia.toandoan.OptionItem"/>
+            type="com.framgia.toandoan.data.option.model.OptionItem"/>
 
         <variable
             name="hanlder"
-            type="com.framgia.toandoan.OptionAdapter"/>
+            type="com.framgia.toandoan.screen.option.OptionAdapter"/>
 
         <variable
             name="pos"

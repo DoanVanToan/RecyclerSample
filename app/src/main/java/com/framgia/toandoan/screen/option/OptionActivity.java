@@ -1,4 +1,4 @@
-package com.framgia.toandoan;
+package com.framgia.toandoan.screen.option;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,24 +14,24 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.framgia.toandoan.databinding.ActivityMainBinding;
-
-import java.io.File;
+import com.framgia.toandoan.R;
+import com.framgia.toandoan.data.option.model.OptionItem;
+import com.framgia.toandoan.databinding.ActivityOptionBinding;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
-public class MainActivity extends AppCompatActivity implements OptionAdapter.OnAdapterClick {
+public class OptionActivity extends AppCompatActivity implements OptionAdapter.OnAdapterClick {
     private static final int READ_EXTERNAL_REQUEST = 1;
     private static final int PICK_IMAGE_REQUEST = 2;
     private RecyclerView mRecyclerView;
     private OptionAdapter mAdapter;
-    private ActivityMainBinding mBinding;
+        private ActivityOptionBinding mBinding;
     private OptionItem mOptionItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_option);
         mAdapter = new OptionAdapter(this);
         mRecyclerView = mBinding.recyclerOption;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements OptionAdapter.OnA
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null &&
             data.getData() != null) {
             Uri selectedImageURI = data.getData();
-            String url = getRealPathFromURI(selectedImageURI);
+            String url = selectedImageURI.getPath();
             mOptionItem.setUrl(url);
         }
     }

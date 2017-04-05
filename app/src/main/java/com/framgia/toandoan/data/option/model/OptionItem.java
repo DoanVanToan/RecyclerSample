@@ -1,7 +1,9 @@
-package com.framgia.toandoan;
+package com.framgia.toandoan.data.option.model;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+
+import com.framgia.toandoan.BR;
 
 /**
  * Created by framgia on 29/03/2017.
