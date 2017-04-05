@@ -26,6 +26,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + OptionPersistenceContract.OptionEntry.COLUMN_TITLE
             + TEXT_TYPE
             + COMMA_SEP
+            + OptionPersistenceContract.OptionEntry.COLUMN_URL
+            + TEXT_TYPE
+            + COMMA_SEP
             + OptionPersistenceContract.OptionEntry.COLUMN_TASK_ID
             + BOOLEAN_TYPE
             + " )";
